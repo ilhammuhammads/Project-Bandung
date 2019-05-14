@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav">
+        <mat-toolbar class="mat-elevation-z4">
+            <div class="container-a">
+                <a class="size text-color" mat-button
+                matTooltip="Home" routerLink="/" (click)="drawer.toggle()">
+                Bandung</a>
+            </div>
+        </mat-toolbar>
+        <mat-nav-list class="nav-list">
+            <a routerLink='/books' mat-list-item (click)="drawer.toggle()" >Books</a>
+            <a routerLink='/members' mat-list-item (click)="drawer.toggle()" >Members</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="bg-color">
+        <mat-toolbar class="text-color mat-elevation-z4">
+            <button mat-icon-button 
+            mat-raised-button 
+            matTooltip="Click Me!"
+            type="button"
+            aria-label="Toggle sidenav"
+            (click)="drawer.toggle()" 
+            class="_hide" fxHide.sm fxHide.md fxHide.lg fxHide.gt>
+            <mat-icon>menu</mat-icon>
+            </button> &nbsp;
+            <div class="container-a">
+                <a class="size" mat-button
+                matTooltip="Home" routerLink="/">
+                Bandung</a>
+            </div>
+            <div class="container-a hide">
+                <a class="_size" mat-button
+                matTooltip="Books" routerLink="/books" fxHide.xs>
+                Books</a>
+            </div>
+            <div class="container-a hide">
+                <a class="_size" mat-button
+                matTooltip="Members" routerLink="/members" fxHide.xs>
+                Members</a>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet> 
+    </mat-sidenav-content>
+</mat-sidenav-container>

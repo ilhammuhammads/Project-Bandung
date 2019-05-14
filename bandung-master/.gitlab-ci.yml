@@ -1,0 +1,46 @@
+image: docker:stable
+services:
+  - docker:dind
+
+stages:
+  - build
+  - package
+
+frontend-build:
+  image: node:10.15.0-alpine
+  stage: build
+
+  script:
+    - ls
+    - cd ./frontend/
+    - npm install
+    - npm run build --prod
+
+  cache:
+    paths:
+      - node_modules
+
+  artifacts:
+    paths:
+      - ./frontend/package.json
+      - ./frontend/dist
+      - ./frontend/nginx.conf
+
+  only:
+    - responsive
+
+frontend-package:
+  stage: package
+
+  dependencies:
+    - frontend-build
+
+  script:
+    - ls
+    - cd ./frontend/
+    - ls
+    - docker image build -t bandung-fe .
+    - docker image ls
+
+  only:
+    - responsive

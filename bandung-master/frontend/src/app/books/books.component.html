@@ -1,0 +1,15 @@
+<br>
+<div class="container"
+  fxLayoutGap="5px"
+  fxLayoutAlign="start">
+  <button mat-icon-button mat-raised-button (click)="onDialogAddClick()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-icon-button mat-raised-button (click)="onRefreshBooks()">
+    <mat-icon>refresh</mat-icon>
+  </button>
+</div>
+<app-books-list
+  #bookList
+  (editBookDialog)="onDialogEditClick($event)"
+></app-books-list>

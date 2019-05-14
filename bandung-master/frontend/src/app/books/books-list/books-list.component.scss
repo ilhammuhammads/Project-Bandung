@@ -1,0 +1,34 @@
+$t-color: white;
+$bg-color: #FFAB91;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+}
+
+.container > * {
+    width: 45%;
+}
+
+table {
+    width: 50%;
+    th {
+        background-color: $bg-color;
+        font-size: 18px;
+        color: $t-color;
+    }
+    td {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 960px) {
+    table {
+        width: 95%
+    }
+    .container > * {
+        width: 75%;
+    }
+}

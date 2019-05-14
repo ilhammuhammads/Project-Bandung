@@ -1,0 +1,48 @@
+<br>
+<div class="books-list" fxLayout="column">
+    <div class="container">
+        <mat-form-field appearance="outline">
+          <mat-label>Books Filter</mat-label>
+          <input
+            matInput
+            (keyup)="booksFilter($event.target.value)"
+            placeholder="Search..."
+          />
+        </mat-form-field>
+    </div>
+  <table mat-table align="center" [dataSource]="libBooks" matSort class="mat-elevation-z1">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let books; columns: displayedColumns"></tr>
+
+    <ng-container matColumnDef="judul">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Judul</th>
+      <td mat-cell *matCellDef="let book">{{ book.judul }}</td>
+    </ng-container>
+    <ng-container matColumnDef="pengarang">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Pengarang</th>
+      <td mat-cell *matCellDef="let book">{{ book.pengarang }}</td>
+    </ng-container>
+    <ng-container matColumnDef="penerbit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Penerbit</th>
+      <td mat-cell *matCellDef="let book">{{ book.penerbit }}</td>
+    </ng-container>
+    <ng-container matColumnDef="tahun">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tahun</th>
+      <td mat-cell *matCellDef="let book">{{ book.tahun }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef name="actions">Actions</th>
+      <td mat-cell *matCellDef="let book">
+        <button mat-icon-button [routerLink]="['/books', book.id]">
+          <mat-icon>info</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onEditDialogOpen(book.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteBook(book.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  </table>
+</div>

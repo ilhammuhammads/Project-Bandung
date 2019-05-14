@@ -1,0 +1,40 @@
+<div
+  class="books-detail"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="2rem"
+>
+  <mat-card *ngIf="book">
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between">
+      <mat-card-title>{{ book.judul }}</mat-card-title>
+      <mat-card-subtitle>{{ book.tahun }}</mat-card-subtitle>
+      <div fxLayout="column" fxLayoutALign="center center">
+        <button mat-icon-button (click)="onDialogEditClick(book.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+    <mat-card-content
+      fxLayout="row"
+      fxLayoutAlign="space-between"
+      fxLayoutGap="16rem"
+    >
+      <div class="content-left">
+        <p>ID</p>
+        <p>Judul Buku</p>
+        <p>Pengarang</p>
+        <p>Penerbit</p>
+        <p>Tahun Terbit</p>
+      </div>
+      <div class="content-right">
+        <p>{{ book.id }}</p>
+        <p>{{ book.judul }}</p>
+        <p>{{ book.pengarang }}</p>
+        <p>{{ book.penerbit }}</p>
+        <p>{{ book.tahun }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <p *ngIf="!book">No Book Found!</p>
+  <button mat-flat-button routerLink="/books">View All Books</button>
+</div>

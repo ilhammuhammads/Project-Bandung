@@ -1,0 +1,111 @@
+{
+  "example": [
+    {
+      "id": 1,
+      "name": "example name 1"
+    },
+    {
+      "id": 2,
+      "name": "example name 2"
+    },
+    {
+      "id": 3,
+      "name": "example name 3"
+    }
+  ],
+  "members": [
+    {
+      "id": 1,
+      "nama": "Ariiq",
+      "alamat": "Jl. A",
+      "nohandphone": "+12345678910",
+      "gender": "L"
+    },
+    {
+      "id": 2,
+      "nama": "Puji",
+      "alamat": "Jl. B",
+      "nohandphone": "+12345678910",
+      "gender": "L"
+    },
+    {
+      "id": 3,
+      "nama": "Guna",
+      "alamat": "Jl. C",
+      "nohandphone": "+12345678910",
+      "gender": "L"
+    },
+    {
+      "id": 4,
+      "nama": "Ulwy",
+      "alamat": "Jl. D",
+      "nohandphone": "+12345678910",
+      "gender": "L"
+    },
+    {
+      "id": 5,
+      "nama": "Tatas",
+      "alamat": "Jl. E",
+      "nohandphone": "+12345678910",
+      "gender": "L"
+    },
+    {
+      "id": 6,
+      "nama": "Luthfi",
+      "alamat": "Jl. G",
+      "nohandphone": "+12345678910",
+      "gender": "L"
+    }
+  ],
+  "books": [
+    {
+      "judul": "Judul A",
+      "pengarang": "Pengarang A",
+      "tahun": "2001",
+      "penerbit": "Penerbit A",
+      "id": "1"
+    },
+    {
+      "judul": "Judul B",
+      "pengarang": "Pengarang B",
+      "tahun": "2002",
+      "penerbit": "Penerbit B",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "judul": "Judul C",
+      "pengarang": "Pengarang C",
+      "tahun": "2003",
+      "penerbit": "Penerbit C"
+    },
+    {
+      "id": "4",
+      "judul": "Judul D",
+      "pengarang": "Pengarang D",
+      "tahun": "2004",
+      "penerbit": "Penerbit D"
+    },
+    {
+      "judul": "Judul E",
+      "pengarang": "Pengarang E",
+      "tahun": "2005",
+      "penerbit": "Penerbit E",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "judul": "Judul F",
+      "pengarang": "Pengarang F",
+      "tahun": "2006",
+      "penerbit": "Penerbit F"
+    },
+    {
+      "id": "7",
+      "judul": "Judul G",
+      "pengarang": "Pengarang G",
+      "tahun": "2007",
+      "penerbit": "Penerbit G"
+    }
+  ]
+}

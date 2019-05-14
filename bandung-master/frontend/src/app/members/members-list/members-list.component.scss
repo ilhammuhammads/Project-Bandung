@@ -1,0 +1,21 @@
+$t-color: white;
+$bg-color: #FFAB91;
+table {
+    width: 50%;
+    th {
+        text-align: center;
+        background-color: $bg-color;
+        font-size: 18px;
+        color: $t-color;
+    }
+    td {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 960px){
+    table {
+        width: 95%;
+    }   
+}

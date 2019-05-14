@@ -1,0 +1,74 @@
+$t-color: white;
+$bg-color: #FFAB91;
+$big-bgcolor: rgba(232, 232, 232, 1);
+mat-toolbar {
+    background-color: $bg-color;
+    font-size: 30px;
+}
+button {
+    background-color: $t-color;
+    color:$bg-color;
+}
+.color {
+    color: $bg-color;
+    background-color: $t-color;
+}
+.text-color {
+    color: $t-color;
+    &.text {
+        font-size: 70%;
+    }
+}
+.bg-color {
+    background-color: $big-bgcolor;
+}
+.container-a {
+    display: flex;
+    justify-content: center;
+    .size {
+        font-size: 20px;
+    }
+    .size1 {
+        font-size: 25px;
+        color: #6a89cc;
+    }
+    ._size {
+        font-size: 20px;
+    }
+}
+.sidenav-container {
+    height: 100%;
+    background-color: $t-color;
+  }
+
+@media (max-width: 768px) {
+    .sidenav {
+        width: 30%;
+        display: flex;
+    }
+}
+
+// @media (max-width: 768px) {
+//     .hide {
+//         display: none;
+//     }
+// }
+// @media (min-width: 1024px ){
+//     ._hide{
+//         display: none;
+//     }
+// }
+
+.nav-list {
+    padding: 5px;
+    a { 
+        display: flex;
+        font-size: 17px;
+        color: $bg-color;
+    }
+}
+
+.sidenav {
+    width: 10em;
+    z-index: 9999;
+}

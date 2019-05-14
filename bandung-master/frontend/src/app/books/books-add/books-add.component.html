@@ -1,0 +1,77 @@
+<div class="books-add">
+  <h1 mat-dialog-title>Add Book</h1>
+  <div mat-dialog-content>
+    <form
+      id="addForm"
+      [formGroup]="addForm"
+      (ngSubmit)="addBook(addForm)"
+      fxLayout="column"
+      novalidate
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Judul</mat-label>
+        <input
+          matInput
+          placeholder="Judul Buku"
+          formControlName="judul"
+          required
+        />
+        <mat-error *ngIf="!af.judul.valid">Judul Buku is required!</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Pengarang</mat-label>
+        <input
+          matInput
+          placeholder="Nama Pengarang"
+          formControlName="pengarang"
+          required
+        />
+        <mat-error *ngIf="!af.pengarang.valid"
+          >Nama Pengarang is required!</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Penerbit</mat-label>
+        <input
+          matInput
+          placeholder="Nama Penerbit"
+          formControlName="penerbit"
+          required
+        />
+        <mat-error *ngIf="!af.penerbit.valid"
+          >Nama Penerebit is required!</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Tahun</mat-label>
+        <input
+          matInput
+          placeholder="Tahun Buku"
+          formControlName="tahun"
+          required
+        />
+        <mat-error *ngIf="af.tahun.hasError('pattern')"
+          >Tahun Buku must be numbers!</mat-error
+        >
+        <mat-error
+          *ngIf="
+            af.tahun.hasError('maxlength') || af.tahun.hasError('minlength')
+          "
+          >Tahun Buku min 4 & max 4 characters!</mat-error
+        >
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-action>
+    <button
+      mat-flat-button
+      color="primary"
+      form="addForm"
+      type="submit"
+      [disabled]="addForm.invalid"
+    >
+      Save
+    </button>
+    <button mat-flat-button (click)="onCancel()">Cancel</button>
+  </div>
+</div>

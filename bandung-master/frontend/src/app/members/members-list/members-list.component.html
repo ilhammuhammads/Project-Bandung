@@ -1,0 +1,34 @@
+<table align="center" mat-table [dataSource]="dataMembers" class="mat-elevation-z6">
+  <ng-container matColumnDef="nama">
+    <th mat-header-cell *matHeaderCellDef>Nama</th>
+    <td mat-cell *matCellDef="let member">{{member.nama}}</td>
+  </ng-container>
+  <ng-container matColumnDef="alamat">
+    <th mat-header-cell *matHeaderCellDef>Alamat</th>
+    <td mat-cell *matCellDef="let member">{{member.alamat}}</td>
+  </ng-container>
+  <ng-container matColumnDef="nohandphone">
+    <th mat-header-cell *matHeaderCellDef>No. Hp</th>
+    <td mat-cell *matCellDef="let member">{{member.nohandphone}}</td>
+  </ng-container>
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef>Gender</th>
+    <td mat-cell *matCellDef="let member">{{member.gender}}</td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let member">
+        <button name='detail' mat-icon-button matTooltip="Detail">
+          <mat-icon>info</mat-icon>
+        </button>
+        <button name='edit' mat-icon-button matTooltip="Edit">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button name="deleteBtn" mat-icon-button matTooltip="Delete" (click)="onDeleteDialogOpen()" >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

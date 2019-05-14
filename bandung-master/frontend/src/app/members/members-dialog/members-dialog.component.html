@@ -1,0 +1,13 @@
+<div *ngIf = "dialogType === 'add'; then memberAdd; else memberDelete">
+
+  <ng-template #memberAdd>
+    <app-members-add closeDialog="onCloseDialog()"></app-members-add>
+  </ng-template>
+
+  <ng-template #memberEdit>
+  </ng-template>
+
+  <ng-template #memberDelete>
+    <app-members-delete></app-members-delete>
+  </ng-template>
+</div>

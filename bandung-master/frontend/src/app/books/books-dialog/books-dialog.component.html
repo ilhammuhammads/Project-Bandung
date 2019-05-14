@@ -1,0 +1,7 @@
+<div *ngIf="dialogType === 'add'; then bookAdd; else bookEdit"></div>
+<ng-template #bookAdd>
+  <app-books-add (closeDialog)="onDialogClose()"></app-books-add>
+</ng-template>
+<ng-template #bookEdit>
+  <app-books-edit [bookId]="bookId" (closeDialog)="onDialogClose()"></app-books-edit>
+</ng-template>

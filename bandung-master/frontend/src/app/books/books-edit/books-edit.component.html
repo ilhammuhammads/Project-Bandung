@@ -1,0 +1,79 @@
+<div class="books-edit">
+  <div *ngIf="book">
+    <h1 mat-dialog-title>Edit Book</h1>
+    <div mat-dialog-content>
+      <form
+        id="editForm"
+        [formGroup]="editForm"
+        (ngSubmit)="editBook(editForm, book.id)"
+        fxLayout="column"
+        novalidate
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>Judul</mat-label>
+          <input
+            matInput
+            placeholder="Judul Buku"
+            formControlName="judul"
+            required
+          />
+          <mat-error *ngIf="!ef.judul.valid">Judul Buku is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Pengarang</mat-label>
+          <input
+            matInput
+            placeholder="Nama Pengarang"
+            formControlName="pengarang"
+            required
+          />
+          <mat-error *ngIf="!ef.pengarang.valid"
+            >Nama Pengarang is required!</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Penerbit</mat-label>
+          <input
+            matInput
+            placeholder="Nama Penerbit"
+            formControlName="penerbit"
+            required
+          />
+          <mat-error *ngIf="!ef.penerbit.valid"
+            >Nama Penerebit is required!</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Tahun</mat-label>
+          <input
+            matInput
+            placeholder="Tahun Buku"
+            formControlName="tahun"
+            required
+          />
+          <mat-error *ngIf="ef.tahun.hasError('pattern')"
+            >Tahun Buku must be numbers!</mat-error
+          >
+          <mat-error
+            *ngIf="
+              ef.tahun.hasError('maxlength') || ef.tahun.hasError('minlength')
+            "
+            >Tahun Buku min 4 & max 4 characters!</mat-error
+          >
+        </mat-form-field>
+      </form>
+    </div>
+    <div mat-dialog-actions>
+      <button
+        mat-flat-button
+        color="primary"
+        form="editForm"
+        type="submit"
+        [disabled]="editForm.invalid"
+      >
+        Save
+      </button>
+      <button mat-flat-button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

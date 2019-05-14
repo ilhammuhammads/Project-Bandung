@@ -1,0 +1,19 @@
+$font-color: black;
+$bg-color: white;
+.container{
+    margin-left: 25%;
+    button {
+        color: $font-color;
+        background-color: $bg-color;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 3%;
+        button{
+            color: $font-color;
+            background-color: $bg-color;
+        }
+    }
+}
